@@ -9,7 +9,7 @@ Use the filters on the right to explore data by region, product line, or time pe
 ## 🔗 Live Dashboard
 
 <iframe 
-  src="[https://public.tableau.com/views/YourDashboardName/YourViewName?:embed=y&:showVizHome=no](https://public.tableau.com/app/profile/matthew.henry1107/viz/SampleDashboard1_17596221393290/SampleKPIGoalDashboard)" 
+  src="https://public.tableau.com/app/profile/matthew.henry1107/viz/SampleDashboard1_17596221393290/SampleKPIGoalDashboard" 
   width="100%" 
   height="800" 
   frameborder="0">
