@@ -1,36 +1,46 @@
 ---
 layout: default
-title: "📊 Sample KPI Goal Dashboard"
+title: "📊 Matt Henry — Data Engineer & Tableau Developer"
 ---
 
 <style>
-/* Make the main content wider */
+/* GENERAL LAYOUT */
 .wrapper, .container, .page-content, main {
   max-width: 2000px !important;
-  width: 100% !important;
+  width: 95% !important;
   margin: 0 auto !important;
+  font-family: "Segoe UI", Roboto, sans-serif;
 }
 
-/* Tabs container */
+/* HEADER */
+h1, h2, h3 {
+  color: #1a1a1a;
+}
+header {
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+/* TABS */
 .tab-container {
-  margin-top: 1em;
+  margin-top: 2em;
 }
 
-/* Tab buttons */
 .tab-buttons {
   display: flex;
+  justify-content: center;
   border-bottom: 2px solid #ccc;
+  flex-wrap: wrap;
 }
 
 .tab-button {
-  flex: 1;
-  padding: 10px;
+  padding: 12px 20px;
   cursor: pointer;
   background: #f5f5f5;
   border: none;
   border-bottom: 2px solid transparent;
-  font-weight: bold;
-  transition: 0.2s ease;
+  font-weight: 600;
+  transition: all 0.2s ease;
 }
 
 .tab-button:hover {
@@ -38,11 +48,12 @@ title: "📊 Sample KPI Goal Dashboard"
 }
 
 .tab-button.active {
-  border-bottom: 2px solid #0078d7;
+  border-bottom: 3px solid #0078d7;
   background: #fff;
+  color: #0078d7;
 }
 
-/* Tab content */
+/* TAB CONTENT */
 .tab-content {
   display: none;
   padding: 1em 0;
@@ -52,79 +63,36 @@ title: "📊 Sample KPI Goal Dashboard"
   display: block;
 }
 
-/* Make Tableau dashboard use full width */
+/* TABLEAU DASHBOARDS */
 .tableauPlaceholder, .tableauViz {
   width: 100% !important;
-}
-</style>
-
-# 📊 Sample KPI Goal Dashboard
-
-Welcome! This Tableau dashboard highlights key performance indicators, progress toward goals, and trend insights.
-
-<div class="tab-container">
-
-  <div class="tab-buttons">
-    <button class="tab-button active" onclick="openTab(event, 'dashboard')">Dashboard</button>
-    <button class="tab-button" onclick="openTab(event, 'details')">Details</button>
-    <button class="tab-button" onclick="openTab(event, 'about')">About</button>
-  </div>
-
-  <!-- TAB 1: Dashboard -->
-  <div id="dashboard" class="tab-content active">
-    <div class='tableauPlaceholder' id='viz1728063854295' style='position: relative'>
-      <noscript>
-        <a href='https://public.tableau.com/views/SampleDashboard1_17596221393290/SampleKPIGoalDashboard'>
-          <img alt='Sample KPI Goal Dashboard' src='https://public.tableau.com/static/images/Sa/SampleDashboard1_17596221393290/SampleKPIGoalDashboard/1_rss.png' style='border: none' />
-        </a>
-      </noscript>
-      <object class='tableauViz' width='100%' height='850' style='display:none;'>
-        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
-        <param name='embed_code_version' value='3' /> 
-        <param name='path' value='views/SampleDashboard1_17596221393290/SampleKPIGoalDashboard?:language=en-US&:display_count=n&:origin=viz_share_link' /> 
-        <param name='toolbar' value='yes' />
-      </object>
-    </div>
-  </div>
-
-  <!-- TAB 2: Details -->
-  <div id="details" class="tab-content">
-    <h3>🧾 Dashboard Details</h3>
-    <table>
-      <tr><th>Metric</th><th>Description</th></tr>
-      <tr><td><b>Revenue</b></td><td>Tracks total and target revenue performance.</td></tr>
-      <tr><td><b>Customer Growth</b></td><td>Shows month-over-month customer acquisition.</td></tr>
-      <tr><td><b>Goal Attainment</b></td><td>Displays current performance vs strategic goals.</td></tr>
-    </table>
-  </div>
-
-  <!-- TAB 3: About -->
-  <div id="about" class="tab-content">
-    <p>This dashboard was created in Tableau Public and embedded via GitHub Pages. It demonstrates how to visualize KPIs and performance data interactively.</p>
-    <p><i>Last updated October 2025.</i></p>
-  </div>
-
-</div>
-
-<script>
-function openTab(evt, tabId) {
-  // Hide all tab contents
-  document.querySelectorAll(".tab-content").forEach(t => t.classList.remove("active"));
-  
-  // Remove "active" from all buttons
-  document.querySelectorAll(".tab-button").forEach(b => b.classList.remove("active"));
-  
-  // Show current tab and mark button active
-  document.getElementById(tabId).classList.add("active");
-  evt.currentTarget.classList.add("active");
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-// Tableau embed script
-var divElement = document.getElementById('viz1728063854295');
-var vizElement = divElement.getElementsByTagName('object')[0];
-vizElement.style.width='100%';
-vizElement.style.height='850px';
-var scriptElement = document.createElement('script');
-scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-vizElement.parentNode.insertBefore(scriptElement, vizElement);
-</script>
+/* RESUME SECTION */
+.resume {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fafafa;
+  border-radius: 10px;
+  padding: 1.5em;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.resume h3 {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.25em;
+}
+
+.resume-item {
+  margin-bottom: 1em;
+}
+
+.resume-item h4 {
+  margin: 0;
+  color: #0078d7;
+}
+
+/* CONTACT */
+.contact-links a {
