@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Portfolio</title>
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
     body {
       margin: 0;
@@ -15,26 +19,32 @@
       background-color: black;
       height: 250px;
       color: white;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 40px;
+      position: relative;
+    }
+
+    .social-links {
+      position: absolute;
+      top: 20px;
+      left: 30px;
+    }
+
+    .social-links a {
+      color: white;
+      font-size: 28px;
+      margin-right: 20px;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: #00aaff;
     }
 
     .banner h1 {
+      text-align: center;
+      line-height: 250px;
       margin: 0;
       font-size: 2em;
-    }
-
-    .links a {
-      color: white;
-      text-decoration: none;
-      margin-left: 20px;
-      font-size: 1.1em;
-    }
-
-    .links a:hover {
-      text-decoration: underline;
     }
 
     .content {
@@ -45,11 +55,15 @@
 </head>
 <body>
   <div class="banner">
-    <h1>My Portfolio</h1>
-    <div class="links">
-      <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
-      <a href="https://public.tableau.com" target="_blank">Tableau Public</a>
+    <div class="social-links">
+      <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://public.tableau.com" target="_blank" aria-label="Tableau Public">
+        <i class="fas fa-chart-bar"></i>
+      </a>
     </div>
+    <h1>My Portfolio</h1>
   </div>
 
   <div class="content">
