@@ -18,35 +18,26 @@
     .banner {
       position: relative;
       height: 250px;
-      overflow: hidden;
       color: white;
       display: flex;
       justify-content: center;
       align-items: center;
-      background: linear-gradient(180deg, #000000, #0a0a0a);
-    }
+      overflow: hidden;
+      background-color: #0a0a0a;
 
-    /* Animated subtle white flowing lines */
-    .banner::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: -50%;
-      width: 200%;
-      height: 100%;
-      background: repeating-linear-gradient(
-        120deg,
-        rgba(255, 255, 255, 0.05) 0px,
-        rgba(255, 255, 255, 0.05) 2px,
-        transparent 4px,
-        transparent 8px
-      );
-      animation: flow 15s linear infinite;
-    }
-
-    @keyframes flow {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
+      /* Subtle grunge effect using layered gradients */
+      background-image:
+        radial-gradient(circle at 10% 20%, rgba(255,255,255,0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 40%, rgba(255,255,255,0.03) 0%, transparent 60%),
+        repeating-linear-gradient(
+          90deg,
+          rgba(255,255,255,0.06) 0px,
+          rgba(255,255,255,0.06) 2px,
+          transparent 4px,
+          transparent 8px
+        ),
+        linear-gradient(180deg, #000000, #111111);
+      background-blend-mode: overlay;
     }
 
     .social-links {
@@ -61,10 +52,12 @@
       font-size: 28px;
       margin-right: 20px;
       text-decoration: none;
-      transition: color 0.3s ease;
+      opacity: 0.9;
+      transition: opacity 0.3s ease;
     }
 
     .social-links a:hover {
+      opacity: 1;
       color: #00aaff;
     }
 
@@ -72,6 +65,8 @@
       z-index: 1;
       font-size: 2em;
       margin: 0;
+      letter-spacing: 1px;
+      text-shadow: 0 0 5px rgba(255,255,255,0.2);
     }
 
     .content {
