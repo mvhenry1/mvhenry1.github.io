@@ -16,29 +16,117 @@ title: "📊 Sample KPI Goal Dashboard"
   margin-top: 0.5em;
 }
 
-/* Tab buttons bar */
+/* Small, top tab bar (sticky) */
 .tab-buttons {
   display: flex;
+  gap: 8px;
   justify-content: center;
-  border-bottom: 1px solid #ccc;
+  align-items: center;
+  border-bottom: 1px solid #e6e6e6;
   background: #fafafa;
+  padding: 6px 12px;
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 1000;
 }
 
 /* Tab buttons (smaller and cleaner) */
 .tab-button {
   flex: 0 0 auto;
-  padding: 6px 16px;
+  padding: 6px 12px;
   cursor: pointer;
   background: none;
   border: none;
   border-bottom: 2px solid transparent;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 600;
   color: #333;
-  transition: all 0.2s ease;
+  border-radius: 6px 6px 0 0;
+  transition: all 0.15s ease;
 }
 
-.
+.tab-button:hover {
+  color: #0078d7;
+  background: #f3f7fb;
+}
+
+.tab-button.active {
+  border-bottom: 2px solid #0078d7;
+  color: #0078d7;
+  background: #fff;
+}
+
+/* Tab content */
+.tab-content {
+  display: none;
+  padding: 1.2em 0;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* Tableau container (use a DIV for tableau.Viz) */
+.tableauPlaceholder {
+  width: 100% !important;
+  min-height: 700px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1em;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+th {
+  background-color: #f0f0f0;
+}
+
+/* Fade transition for tab content */
+.tab-content {
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.tab-content.active {
+  opacity: 1;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .tab-buttons {
+    flex-wrap: wrap;
+    padding: 8px;
+  }
+  .tab-button {
+    flex: 1 1 33%;
+    font-size: 14px;
+    padding: 8px;
+  }
+  #vizContainer { height: 65vh !important; min-height: 500px; }
+}
+</style>
+
+# 📊 Sample KPI Goal Dashboard
+
+Welcome! This Tableau dashboard highlights key performance indicators, progress toward goals, and trend insights.
+
+<div class="tab-container">
+
+  <div class="tab-buttons" role="tablist" aria-label="Dashboard tabs">
+    <button class="tab-button active" data-target="dashboard" role="tab" aria-selected="true" aria-controls="dashboard">Dashboard</button>
+    <button class="tab-button" data-target="details" role="tab" aria-selected="false" aria-controls="details">Details</button>
+    <button class="tab-button" data-target="about" role="tab" aria-selected="false" aria-controls="about">About</button>
+  </div>
+
+  <!-- TAB 1: Dashboard -->
+  <div id="dashboard" class="tab-content active"
