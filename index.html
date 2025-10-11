@@ -23,13 +23,15 @@
       justify-content: center;
       overflow: hidden;
       background-color: #0b0b0b;
+
+      /* ✨ subtle dotted glow background */
       background-image:
-        radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px);
-      background-size: 30px 30px; /* controls dot density */
+        radial-gradient(circle, rgba(255,255,255,0.15) 2px, transparent 2px);
+      background-size: 35px 35px; /* controls spacing between dots */
       background-blend-mode: screen;
     }
 
-    /* Optional: add a faint vignette to the edges */
+    /* Optional vignette for cinematic edges */
     .banner::after {
       content: "";
       position: absolute;
