@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Portfolio</title>
 
+  <!-- ① Add Google Font link here -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
@@ -23,15 +27,12 @@
       justify-content: center;
       overflow: hidden;
       background-color: #0b0b0b;
-
-      /* ✨ fine dotted star-field style background */
       background-image:
         radial-gradient(circle, rgba(255,255,255,0.12) 1px, transparent 1px);
       background-size: 35px 35px;
       background-blend-mode: screen;
     }
 
-    /* Optional vignette for cinematic edges */
     .banner::after {
       content: "";
       position: absolute;
@@ -61,12 +62,15 @@
       color: #00aaff;
     }
 
+    /* ② Apply your font here */
     .banner h1 {
       z-index: 1;
-      font-size: 2em;
+      font-size: 2.2em;
       margin: 0;
       letter-spacing: 1px;
       text-shadow: 0 0 10px rgba(255,255,255,0.3);
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
     }
 
     .content {
