@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Portfolio</title>
 
-  <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
@@ -23,16 +22,20 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      background-color: #0b0b0b; /* almost pure black */
-
-      /* white dot noise effect */
+      background-color: #0b0b0b;
       background-image:
-        radial-gradient(circle at 20% 30%, rgba(255,255,255,0.08) 1px, transparent 2px),
-        radial-gradient(circle at 80% 60%, rgba(255,255,255,0.05) 1px, transparent 2px),
-        radial-gradient(circle at 50% 10%, rgba(255,255,255,0.07) 1px, transparent 2px),
-        radial-gradient(circle at 10% 80%, rgba(255,255,255,0.04) 1px, transparent 2px),
-        radial-gradient(circle at 90% 20%, rgba(255,255,255,0.05) 1px, transparent 2px);
-      background-size: cover;
+        radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px);
+      background-size: 30px 30px; /* controls dot density */
+      background-blend-mode: screen;
+    }
+
+    /* Optional: add a faint vignette to the edges */
+    .banner::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, transparent 60%, rgba(0,0,0,0.7));
+      pointer-events: none;
     }
 
     .social-links {
@@ -61,7 +64,7 @@
       font-size: 2em;
       margin: 0;
       letter-spacing: 1px;
-      text-shadow: 0 0 5px rgba(255,255,255,0.2);
+      text-shadow: 0 0 10px rgba(255,255,255,0.3);
     }
 
     .content {
